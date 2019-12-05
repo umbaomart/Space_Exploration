@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/**************************************
+	base
+***************************************/
+/* ---------------------------------------------------------
+スタイルリセット
+----------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6, td, th, p, ul, li, dt, dd {
+  font-size: 1em; }
+
+ul li {
+  list-style: none; }
+
+article, header, footer, aside, figure, figcaption, nav, section {
+  display: block; }
+
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+img {
+  vertical-align: bottom; }
+
+/* ---------------------------------------------------------
+変数
+----------------------------------------------------------*/
+/*break point
+-----------------------*/
+/*color
+-----------------------*/
+/*font family
+-----------------------*/
+/* ---------------------------------------------------------
+mixin
+----------------------------------------------------------*/
+/*メディアクエリ
+-----------------------*/
+/*  clearfix
+-----------------------*/
+/*  font-size
+-----------------------*/
+/*  transition
+-----------------------*/
+/* render text
+----------------------*/
+/* ---------------------------------------------------------
+初期設定
+----------------------------------------------------------*/
+html {
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: normal; }
+
+body {
+  /*font-family: $fontFamily;*/
+  font-family: Gotham HTF Book, sans-serif; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("../fonts/GothamHTF-Book.ttf"); }
+
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url("../fonts/Gotham Black Regular.ttf"); }
+
+html,
+body {
+  position: relative;
+  /*min-width: $pcSize;*/
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+/******************************
+ 	base sp
+*******************************/
+@media screen and (max-width: 767px) {
+  html {
+    min-width: 100%; } }
+
+/**************************************
+
+common.scss
+
+***************************************/
+.pc {
+  display: block; }
+
+.sp {
+  display: none; }
+
+/******************************
+    SP
+*******************************/
+@media screen and (max-width: 767px) {
+  html, body {
+    min-width: auto; }
+  .pc {
+    display: none; }
+  .sp {
+    display: block; } }
+
+/**************************************
+	header
+***************************************/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  width: 100%;
+  padding: 45px 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /*position: fixed;*/
+  position: absolute; }
+
+.header__container .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff; }
+
+.header__container .logo__box {
+  border: 2px solid #fff;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #22ddbc;
+  margin-right: 11px;
+  font-weight: 900; }
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+nav li {
+  margin-left: 20px; }
+
+nav .link {
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 5px;
+  overflow: hidden;
+  display: inline-block; }
+  nav .link:after {
+    content: '';
+    display: block;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #22ddbc;
+    -webkit-transform: translateX(-110%);
+    -ms-transform: translateX(-110%);
+    transform: translateX(-110%);
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear; }
+  nav .link:hover:after {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+
+nav .is-active:after {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%); }
+
+nav .explore_btn {
+  padding: 7px 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px; }
+  nav .explore_btn span {
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    display: inline-block;
+    padding: 4px;
+    -webkit-transform: translateY(-2px) rotate(45deg);
+    -ms-transform: translateY(-2px) rotate(45deg);
+    transform: translateY(-2px) rotate(45deg);
+    margin-right: 3px;
+    margin-left: 10px; }
+
+/******************************
+    header sp
+*******************************/
+/**************************************
+footer
+***************************************/
+/******************************
+    footer sp
+*******************************/
+/**************************************
+home.scss
+***************************************/
+.home {
+  /*background-color: pink;*/ }
+
+main .section__1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center; }
+  main .section__1 .content {
+    height: inherit;
+    width: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  main .section__1 .tit {
+    margin-top: 50px;
+    font-size: 80px;
+    font-weight: 900;
+    font-family: Gotham Bold;
+    color: #22ddbc; }
+    main .section__1 .tit span {
+      display: inline-block; }
+    main .section__1 .tit [data-word="SPACE"] span:last-child {
+      margin-right: 20px; }
+  main .section__1 .subtitle {
+    padding-top: 36px;
+    padding-bottom: 130px;
+    font-size: 16px; }
+  main .section__1 .hero__btn {
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 5px;
+    border-bottom: 2px solid #22ddbc;
+    font-family: Gotham; }
+
+main .section__2 {
+  height: 100vh;
+  width: 100%;
+  background: #252528; }
+
+/******************************
+    SP
+*******************************/

@@ -1,0 +1,32 @@
+/**************************************
+
+common.scss
+
+***************************************/
+
+.pc {
+	display: block;
+}
+
+.sp {
+	display: none;
+}
+
+
+/******************************
+    SP
+*******************************/
+
+@include media($mobileSize) {
+	html, body {
+		min-width: auto;
+	}
+
+	.pc {
+		display: none;
+	}
+
+	.sp {
+		display: block;
+	}
+}

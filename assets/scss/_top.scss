@@ -1,0 +1,81 @@
+/**************************************
+home.scss
+***************************************/
+
+.home {
+	/*background-color: pink;*/
+}
+
+main {
+
+	.section__1 {
+		height: 100vh;
+		width: 100%;
+		background-image: url(../img/bg.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: $white;
+		text-align: center;
+
+		.content {
+			height: inherit;
+			width: inherit;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.tit {
+			margin-top: 50px;
+			font-size: 80px;
+			font-weight: 900;
+			font-family: Gotham Bold;
+			color: #22ddbc;
+
+			span {
+				display: inline-block;
+			}
+
+			[data-word="SPACE"] {
+				span {
+					&:last-child {
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+
+		.subtitle {
+			padding-top: 36px;
+			padding-bottom: 130px;
+			font-size: 16px;
+		}
+
+		.hero__btn {
+			color: $white;
+			font-size: 14px;
+			padding: 12px 5px;
+			border-bottom: 2px solid #22ddbc;
+			font-family: Gotham;
+		}
+	}
+
+	.section__2 {
+		height: 100vh;
+		width: 100%;
+		background: #252528;
+	}
+}
+
+
+
+
+/******************************
+    SP
+*******************************/
+
+@include media($mobileSize) {
+	.home {
+	}
+}
